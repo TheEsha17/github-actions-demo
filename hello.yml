@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My First Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Hey, I'm Esha!</h1>
-    <p>this is my hello.yml file</p>
-</body>
-</html>
+name: Hello Workflow
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, Esha!"
+
